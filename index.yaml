@@ -3,7 +3,17 @@ entries:
   corewar:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-03-07T12:33:21.890587228Z"
+    created: "2025-03-07T12:40:44.61435017Z"
+    description: A Helm chart for Kubernetes
+    digest: f0f99d4aa29dcd57a9c657d40dc93a904436dd1e302b43c558f529dc7086b83c
+    name: corewar
+    type: application
+    urls:
+    - corewar-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-03-07T12:40:44.613706563Z"
     description: A Helm chart for Kubernetes
     digest: 83ffd4224df7f8e5f4d88ab52f5c7e48dc053903de3eec1616d6fcaee88e3513
     name: corewar
@@ -11,4 +21,4 @@ entries:
     urls:
     - corewar-0.1.7.tgz
     version: 0.1.7
-generated: "2025-03-07T12:33:21.890034296Z"
+generated: "2025-03-07T12:40:44.612294Z"
