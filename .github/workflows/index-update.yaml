@@ -1,0 +1,23 @@
+name: Update Index
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+      - name: Helm Installation
+        uses: azure/setup-helm@v4.3.0
+      - name: Update Index
+        run: |
+          helm package corewar
+          helm repo index .
+          git config --global user.email "actionbot@shonk.software"
+          git config --global user.name "Shonk Software Action Bot"
+          git add .
+          git commit -m "Update chart index"
+          git push
