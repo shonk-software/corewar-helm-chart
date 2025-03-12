@@ -2,7 +2,22 @@ apiVersion: v1
 entries:
   corewar:
   - apiVersion: v2
-    created: "2025-03-12T15:31:05.013111654Z"
+    created: "2025-03-12T15:42:52.813215557Z"
+    dependencies:
+    - name: backend
+      repository: file://backend
+      version: 0.1.0
+    - name: frontend
+      repository: file://frontend
+      version: 0.1.0
+    description: A Helm chart for the corewar full-stack application
+    digest: ac67e621684ff00cb4a5e1a380d0daf083009f190ee97cf93aed9c4086a09428
+    name: corewar
+    urls:
+    - corewar-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    created: "2025-03-12T15:42:52.811174918Z"
     dependencies:
     - name: backend
       repository: file://backend
@@ -16,4 +31,4 @@ entries:
     urls:
     - corewar-1.0.1.tgz
     version: 1.0.1
-generated: "2025-03-12T15:31:05.011978844Z"
+generated: "2025-03-12T15:42:52.810005103Z"
