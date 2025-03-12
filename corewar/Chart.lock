@@ -1,0 +1,9 @@
+dependencies:
+- name: backend
+  repository: file://backend
+  version: 0.1.0
+- name: frontend
+  repository: file://frontend
+  version: 0.1.0
+digest: sha256:2215e17cde1eca94b112a2900dd125ce7acf4007db16da1539d259f389eff53c
+generated: "2025-03-12T15:38:36.537668166+01:00"

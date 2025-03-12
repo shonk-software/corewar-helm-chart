@@ -1,10 +1,11 @@
+{{- if .Values.enabled }}
 {{- if .Values.ingress.enabled -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "corewar-chart.fullname" . }}
+  name: {{ include "frontend.fullname" . }}
   labels:
-    {{- include "corewar-chart.labels" . | nindent 4 }}
+    {{- include "frontend.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -18,14 +19,14 @@ spec:
     {{- range .Values.ingress.tls }}
     - hosts:
         {{- range .hosts }}
-        - {{ $.Values.ingress.prefix }}{{ . }}
+        - {{ $.Values.ingress.prefix }}.{{ . }}
         {{- end }}
       secretName: {{ .secretName }}
     {{- end }}
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: {{ $.Values.ingress.prefix }}{{ .host }}
+    - host: {{ $.Values.ingress.prefix }}.{{ .host }}
       http:
         paths:
           {{- range .paths }}
@@ -35,9 +36,10 @@ spec:
             {{- end }}
             backend:
               service:
-                name: {{ include "corewar-chart.fullname" $ }}
+                name: {{ include "frontend.fullname" $ }}
                 port:
                   number: {{ $.Values.service.port }}
           {{- end }}
     {{- end }}
+{{- end }}
 {{- end }}
